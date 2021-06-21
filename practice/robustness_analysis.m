@@ -1,9 +1,4 @@
-fileName = 'ecoli_core_model.mat';
-if ~exist('modelOri','var')
-    modelOri = readCbModel(fileName);
-end
-modelOri = changeRxnBounds(modelOri,'ATPM',1000,'u');
-model_const = modelOri;
+model_const = load_model('ecoli_core_model.mat');
 
 model = changeRxnBounds(model_const,'EX_o2(e)',-17,'b');
 growthRates = zeros(21,1);
