@@ -1,9 +1,4 @@
-fileName = 'ecoli_core_model.mat';
-if ~exist('modelOri','var')
-    modelOri = readCbModel(fileName);
-end
-modelOri = changeRxnBounds(modelOri,'ATPM',1000,'u');
-model = modelOri;
+model = load_model('ecoli_core_model.mat');
 
 model = changeRxnBounds(model,'EX_glc(e)',0,'l');
 model = changeRxnBounds(model,'EX_succ(e)',-20,'l');
