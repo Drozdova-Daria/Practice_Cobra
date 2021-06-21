@@ -1,9 +1,4 @@
-fileName = 'ecoli_core_model.mat';
-if ~exist('modelOri','var')
-    modelOri = readCbModel(fileName);
-end
-modelOri = changeRxnBounds(modelOri,'ATPM',1000,'u');
-model = modelOri;
+model = load_model('ecoli_core_model.mat');
 
 [grRatio,grRateKO,grRateWT] = doubleGeneDeletion(model);
 imagesc(grRatio)
